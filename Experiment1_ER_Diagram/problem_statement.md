@@ -53,7 +53,7 @@ University / Hospital (choose one)
 ## ER Diagram:
 ![ER Diagram](er_diagram.png)
 
-## Entities and Attributes:
+## Entities and Attributes:k
 - Entity1: Attributes
 - Entity2: Attributes
 ...
