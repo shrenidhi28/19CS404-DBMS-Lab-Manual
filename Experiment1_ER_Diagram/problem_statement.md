@@ -45,28 +45,70 @@ Design a database for patient management, appointments, medical records, and bil
    - Why you chose the entities and relationships.
    - How you modeled prerequisites or billing.
 
-# ER Diagram Submission - Student Name
+# ER Diagram Submission - Shrenidhi C
 
 ## Scenario Chosen:
-University / Hospital (choose one)
+University
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
+<img width="869" alt="image" src="https://github.com/user-attachments/assets/a07256d1-5498-4b44-85d3-0495d6ce7b70" />
+
 
 ## Entities and Attributes:
-- Entity1: Attributes
-- Entity2: Attributes
-...
+- Program: program_no,program name
+- Department: dept_id , dept_name
+- Students: addno,fullname,mobile_no,dob
+- courses: course_id, course_name
+- teacher: teacher_id,teacher_name
+
 
 ## Relationships and Constraints:
-- Relationship1 (Cardinality, Participation)
-- Relationship2 (Cardinality, Participation)
-...
+-has (Program–Student) (One-to-Many, Total Participation on Student side)
+
+-has (Program–Department) (Many-to-One, Total Participation on Program side)
+
+-enrolls (Student–Course) (Many-to-Many, Partial Participation on both sides)
+
+-taught by (Course–Teacher) (Many-to-One, Total Participation on Course side)
 
 ## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
+- Students, Programs, and Courses:
+   Students belong to a program.
+   Programs belong to a department.
+   Students enroll in courses.
+   Courses are taught by teachers.
+-Entities and Attributes:
+Student: admission number, full name, mobile number, date of birth.
+Program: program number, name.
+Department: department ID, name.
+Course: course ID, name.
+Teacher: teacher ID, name.
 
 ## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions
+```
+
+Student 
+Central to the academic system—represents individuals enrolled in programs and courses.
+Attributes: admission no, full name, mobile no, dob to uniquely identify and describe each student.
+
+Program
+Represents a structured collection of courses that students enroll in (e.g., BSc CS, BBA).
+Attributes like program no, program name distinguish each program.
+
+Department
+Logical grouping of programs and staff (e.g., Department of Science).
+Attributes: dept id, dept name.
+
+Course
+Core academic content that students enroll in.
+Attributes: course id, course name.
+
+Teacher
+Responsible for teaching courses.
+Attributes like teacher id, teacher name identify and describe them.
+
+```
 
 ## RESULT
+
+The experiment resulted in a structured ER model capturing relationships between students, programs, departments, courses, and teachers; therefore, it provides a clear foundation for building an academic management database.
