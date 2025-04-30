@@ -300,6 +300,7 @@ discount DECIMAL (10, 2) default 0 not null check(discount>=0));
 ```
 
 **Output:**
+<img width="905" alt="image" src="https://github.com/user-attachments/assets/5175db2c-15eb-4386-9ac6-6f703dfce09e" />
 
 
 
