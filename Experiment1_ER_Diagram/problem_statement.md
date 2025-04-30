@@ -45,28 +45,56 @@ Design a database for patient management, appointments, medical records, and bil
    - Why you chose the entities and relationships.
    - How you modeled prerequisites or billing.
 
-# ER Diagram Submission - Student Name
+# ER Diagram Submission - Shrenidhi.C
 
 ## Scenario Chosen:
-University / Hospital (choose one)
+University
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
+<img width="944" alt="image" src="https://github.com/user-attachments/assets/6eb2a604-5304-4b26-a6da-69cc49be27a0" />
+
 
 ## Entities and Attributes:
-- Entity1: Attributes
-- Entity2: Attributes
+- Program: program_no,program name
+- Department: dept_id,dept_name
+- students: add_no,full_name,mobile no,dob
+- course: course_id,course_name
+- teacher: teacher_id,teacher name
 ...
 
 ## Relationships and Constraints:
-- Relationship1 (Cardinality, Participation)
-- Relationship2 (Cardinality, Participation)
-...
+-has (program–students) (1:N, Total–Partial)
+-has (department–program) (1:N, Partial–Total)
+-enrolls (students–courses) (M:N, Partial–Partial)
+-taught by (courses–teacher) (N:1, Total–Partial)
 
 ## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
+1. Prerequisites are modeled using a recursive relationship on the `course` entity.  
+2. The relationship is named prerequisite, connecting a course to its required course(s).  
+3. It has M:N cardinality since one course can have multiple prerequisites and vice versa.  
+4. Billing is modeled by adding a new entity called billing.  
+5. A student is connected to billing via a 1:N relationship (`student` to `billing`).  
+6. The `billing` entity stores attributes like amount, due date, and status.
 
 ## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions
+Brief explanation of why you chose certain entities, relationships, and assumptions:
+
+```
+
+Entities like student, course, program, department, and teacher represent core real-world objects in an academic system.
+
+Relationships such as enrolls, has, and taught by reflect key interactions (e.g., students enroll in courses, teachers teach them).
+
+A recursive relationship for prerequisite allows modeling course dependencies naturally.
+
+A separate billing entity captures financial data without overloading the student entity.
+
+Cardinalities and participation were assumed based on typical university rules (e.g., every course must have a teacher).
+
+These design choices aim for clarity, normalization, and scalability in a real-world database.
+
+```
 
 ## RESULT
+
+Therfore the ER diagram is created and implemented.
